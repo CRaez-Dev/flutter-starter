@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/domain/entities/message.dart';
 
 class ReciverMessageBubble extends StatelessWidget {
-  const ReciverMessageBubble({super.key});
+  final Message message;
+  const ReciverMessageBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +16,11 @@ class ReciverMessageBubble extends StatelessWidget {
             color: colors.primary, 
             borderRadius: BorderRadius.circular(20)
           ),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child:  Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-              'Laboris duis dolore',
-              style: TextStyle(color: Colors.white),
+              message.text,
+              style: const TextStyle(color: Colors.white),
             ),
           ),
         ),
