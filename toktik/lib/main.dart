@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:toktik/theme/app_theme.dart';
+import 'package:provider/provider.dart';
+import 'package:toktik/config/theme/app_theme.dart';
+import 'package:toktik/ui/providers/discover_provider.dart';
 import 'package:toktik/ui/screens/discover/discover_screen.dart';
 
 void main() => runApp(const MyApp());
@@ -9,11 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'TokTik',
-      theme: Apptheme().getTheme(),
-      home: const DiscoverScreen()
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => DiscoverProvider()..loadNextPage(),),
+      ],
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'TokTik',
+          theme: Apptheme().getTheme(),
+          home: const DiscoverScreen()),
     );
   }
 }
