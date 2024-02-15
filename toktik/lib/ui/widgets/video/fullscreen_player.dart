@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:toktik/ui/widgets/video/video_gradient.dart';
 import 'package:video_player/video_player.dart';
@@ -75,7 +73,7 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
 
 class _VideoCaption extends StatelessWidget {
   final String caption;
-  const _VideoCaption({super.key, required this.caption});
+  const _VideoCaption({ required this.caption});
 
   @override
   Widget build(BuildContext context) {
