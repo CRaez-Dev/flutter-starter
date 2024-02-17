@@ -27,6 +27,8 @@ class _ButtonsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
     return SizedBox(
       child: SizedBox(
         width: double.infinity,
@@ -67,12 +69,38 @@ class _ButtonsView extends StatelessWidget {
               IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.app_registration_rounded),
-                style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.blue),
-                    iconColor: MaterialStatePropertyAll(Colors.white)),
+                style: ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(colors.primary),
+                    iconColor: const MaterialStatePropertyAll(Colors.white)),
               ),
-              // TODO: Custom button
+              const _CustomButton()
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _CustomButton extends StatelessWidget {
+  const _CustomButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Material(
+        color: colors.primary,
+        child: InkWell(
+          onTap: () {},
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text(
+              'Custom Button',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
         ),
       ),
