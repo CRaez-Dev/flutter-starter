@@ -57,10 +57,8 @@ class _CustomListTile extends StatelessWidget {
       title: Text(item.title),
       subtitle: Text(item.subTitle),
       onTap: () {
-        //Navigator.pushNamed(context, item.link);
-        // Navigator.of(context).pushNamed(item.link);
-        // context.push(item.link);
-        context.pushNamed(CardsScreen.name);
+        
+        context.push(item.link);
       },
     );
   }
