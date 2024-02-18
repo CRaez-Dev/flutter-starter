@@ -62,5 +62,12 @@ const appMenuItems = <MenuItem>[
       subTitle: "Flutter's control series",
       link: '/ui_controls',
       icon: Icons.car_rental_outlined,
-      widget: UiControlsScreen())
+      widget: UiControlsScreen()),
+       MenuItem(
+      name: AppTutorialScreen.name,
+      title: 'OnBoarding',
+      subTitle: "Small OnBoarding",
+      link: '/app_tutorial',
+      icon: Icons.accessible_rounded,
+      widget: AppTutorialScreen())
 ];
