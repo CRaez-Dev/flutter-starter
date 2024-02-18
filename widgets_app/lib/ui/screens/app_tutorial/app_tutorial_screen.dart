@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SlideInfo {
   final String title;
@@ -14,16 +15,16 @@ final slides = <SlideInfo>[
       title: 'Find a dish',
       caption:
           'Magna dolor ad aliqua irure sunt voluptate in ad proident in voluptate est aliquip.',
-      imageUrl: 'assetes/images/1.png'),
+      imageUrl: 'assets/images/1.png'),
   SlideInfo(
       title: 'Fast Delivery',
       caption: 'Tempor qui adipisicing aliquip sint.',
-      imageUrl: 'assetes/images/2.png'),
+      imageUrl: 'assets/images/2.png'),
   SlideInfo(
-      title: 'Enjoi',
+      title: 'Enjoy',
       caption:
           'Id proident laborum laborum qui ipsum aute reprehenderit eiusmod aliqua non deserunt eiusmod magna.',
-      imageUrl: 'assetes/images/3.png')
+      imageUrl: 'assets/images/3.png')
 ];
 
 class AppTutorialScreen extends StatelessWidget {
@@ -33,9 +34,22 @@ class AppTutorialScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        physics: const BouncingScrollPhysics(),
-        children: slides.map((slideInfo) => _Slide(slide: slideInfo)).toList(),
+      body: Stack(
+        children: [
+          PageView(
+            physics: const BouncingScrollPhysics(),
+            children:
+                slides.map((slideInfo) => _Slide(slide: slideInfo)).toList(),
+          ),
+          Positioned(
+              right: 20,
+              top: 50,
+              child: TextButton(
+                  child: const Text("Skip"),
+                  onPressed: () {
+                    context.pop();
+                  }))
+        ],
       ),
     );
   }
@@ -48,6 +62,34 @@ class _Slide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    final titleStyle = Theme.of(context).textTheme.titleLarge;
+    final captionStyle = Theme.of(context).textTheme.bodySmall;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image(image: AssetImage(slide.imageUrl)),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              slide.title,
+              style: titleStyle,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(slide.caption, style: captionStyle),
+            const SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
