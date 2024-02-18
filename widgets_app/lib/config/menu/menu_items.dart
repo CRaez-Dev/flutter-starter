@@ -41,5 +41,12 @@ const appMenuItems = <MenuItem>[
       subTitle: 'Controlled and general',
       link: '/progress_indicator',
       icon: Icons.refresh_rounded,
-      widget: ProgressScreen())
+      widget: ProgressScreen()),
+      MenuItem(
+      name: SnackbarScreen.name,
+      title: 'Snackbars and Dialog',
+      subTitle: 'Screen kpis',
+      link: '/snackbars',
+      icon: Icons.info_outline,
+      widget: SnackbarScreen())
 ];

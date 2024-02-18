@@ -12,17 +12,5 @@ class AppRouter {
         name: menuItem.name,
         path: menuItem.link,
         builder: (context, state) => menuItem.widget)),
-    // GoRoute(
-    //     name: ButtonsScreen.name,
-    //     path: '/buttons',
-    //     builder: (context, state) => const ButtonsScreen()),
-    // GoRoute(
-    //     name: CardsScreen.name,
-    //     path: '/cards',
-    //     builder: (context, state) => const CardsScreen()),
-    // GoRoute(
-    //     name: CardsScreen.name,
-    //     path: '/cards',
-    //     builder: (context, state) => const CardsScreen())
   ]);
 }
