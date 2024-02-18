@@ -55,5 +55,27 @@ const appMenuItems = <MenuItem>[
       subTitle: 'Statefull widget animated',
       link: '/animated',
       icon: Icons.check_box_outlined,
-      widget: AnimatedScreen())
+      widget: AnimatedScreen()),
+  MenuItem(
+      name: UiControlsScreen.name,
+      title: 'Animated Ui Controls',
+      subTitle: "Flutter's control series",
+      link: '/ui_controls',
+      icon: Icons.car_rental_outlined,
+      widget: UiControlsScreen()),
+  MenuItem(
+      name: AppTutorialScreen.name,
+      title: 'OnBoarding',
+      subTitle: "Small OnBoarding",
+      link: '/app_tutorial',
+      icon: Icons.accessible_rounded,
+      widget: AppTutorialScreen()),
+  MenuItem(
+      name: InfiniteScrollScreen.name,
+      title: 'Infinite Scroll and pull to refresh',
+      subTitle: "",
+      link: '/infinite_scroll_pull_to_refresh',
+      icon: Icons.list_alt_rounded,
+      widget: InfiniteScrollScreen())
+
 ];
