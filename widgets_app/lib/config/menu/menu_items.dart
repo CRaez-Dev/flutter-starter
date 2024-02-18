@@ -63,11 +63,19 @@ const appMenuItems = <MenuItem>[
       link: '/ui_controls',
       icon: Icons.car_rental_outlined,
       widget: UiControlsScreen()),
-       MenuItem(
+  MenuItem(
       name: AppTutorialScreen.name,
       title: 'OnBoarding',
       subTitle: "Small OnBoarding",
       link: '/app_tutorial',
       icon: Icons.accessible_rounded,
-      widget: AppTutorialScreen())
+      widget: AppTutorialScreen()),
+  MenuItem(
+      name: InfiniteScrollScreen.name,
+      title: 'Infinite Scroll and pull to refresh',
+      subTitle: "",
+      link: '/infinite_scroll_pull_to_refresh',
+      icon: Icons.list_alt_rounded,
+      widget: InfiniteScrollScreen())
+
 ];
