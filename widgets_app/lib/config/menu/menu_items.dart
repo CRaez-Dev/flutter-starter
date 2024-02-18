@@ -22,6 +22,13 @@ class MenuItem {
 
 const appMenuItems = <MenuItem>[
   MenuItem(
+      name: CounterScreen.name,
+      title: 'Counter Screen',
+      subTitle: "Riverpod counter",
+      link: '/counter_with_riverpod',
+      icon: Icons.add,
+      widget: CounterScreen()),
+  MenuItem(
       name: ButtonsScreen.name,
       title: 'Buttons',
       subTitle: "Flutter's Buttons ",
@@ -72,10 +79,9 @@ const appMenuItems = <MenuItem>[
       widget: AppTutorialScreen()),
   MenuItem(
       name: InfiniteScrollScreen.name,
-      title: 'Infinite Scroll and pull to refresh',
-      subTitle: "",
+      title: 'Infinite Scroll and PullRefresh',
+      subTitle: "Infinite Scroll and PullRefresh",
       link: '/infinite_scroll_pull_to_refresh',
       icon: Icons.list_alt_rounded,
       widget: InfiniteScrollScreen())
-
 ];
