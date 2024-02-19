@@ -13,3 +13,10 @@ Current progress:
   
 ![plot](./art/toktik.gif)
 
+- WidgetsApp
+	- Riverpod
+	- Material UI widgets
+	- Clean Architecture oriented
+  
+![plot](./art/WidgetsApp.gif)
+

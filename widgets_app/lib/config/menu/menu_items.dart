@@ -83,5 +83,12 @@ const appMenuItems = <MenuItem>[
       subTitle: "Infinite Scroll and PullRefresh",
       link: '/infinite_scroll_pull_to_refresh',
       icon: Icons.list_alt_rounded,
-      widget: InfiniteScrollScreen())
+      widget: InfiniteScrollScreen()),
+    MenuItem(
+      name: ThemeScreen.name,
+      title: 'Theme selecter',
+      subTitle: "Change theme dynamically ",
+      link: '/theme_screen',
+      icon: Icons.color_lens_outlined,
+      widget: ThemeScreen())
 ];
