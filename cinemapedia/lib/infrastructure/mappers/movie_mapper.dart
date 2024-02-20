@@ -16,7 +16,7 @@ class MovieMapper {
         overview: movieDb.overview,
         popularity: movieDb.popularity,
         posterPath: (movieDb.posterPath == '')
-            ? 'https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png'
+            ? 'no-poster'
             : '${Environment.theMovieDbImageUrl}${movieDb.posterPath}',
         releaseDate: movieDb.releaseDate,
         title: movieDb.title,
