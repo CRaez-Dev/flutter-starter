@@ -27,12 +27,12 @@ class _HomeViewState extends ConsumerState<_HomeView> {
   @override
   void initState() {
     super.initState();
-    ref.read(nowPlayingMoviesProvider.notifier).loadnextPage();
+    ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
   }
 
   @override
-  Widget build(BuildContext context) {   
-    final nowPlayingMovies = ref.watch(nowPlayingMoviesProvider) ;
+  Widget build(BuildContext context) {
+    final nowPlayingMovies = ref.watch(nowPlayingMoviesProvider);
     final moviesSlide = ref.watch(moviesSlideShowProvider);
 
     return Column(
@@ -44,7 +44,13 @@ class _HomeViewState extends ConsumerState<_HomeView> {
           MoviesSlideShow(
             movies: moviesSlide,
           ),
-          MovieHorizontalListView(movies:nowPlayingMovies,title: "En cines",subTitle: "Lunes 20",)
+        MovieHorizontalListView(
+          movies: nowPlayingMovies,
+          title: "En cines",
+          subTitle: "Lunes 20",
+          loadNextPage: () =>
+              ref.read(nowPlayingMoviesProvider.notifier).loadNextPage(),
+        )
       ],
     );
   }
