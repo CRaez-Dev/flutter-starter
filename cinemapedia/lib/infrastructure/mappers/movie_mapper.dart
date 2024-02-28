@@ -1,5 +1,6 @@
 import 'package:cinemapedia/config/constants/environment.dart';
 import 'package:cinemapedia/domain/entities/movie.dart';
+import 'package:cinemapedia/infrastructure/models/moviedb/movie_details.dart';
 import 'package:cinemapedia/infrastructure/models/moviedb/movie_from_moviedb.dart';
 
 class MovieMapper {
@@ -17,6 +18,28 @@ class MovieMapper {
         popularity: movieDb.popularity,
         posterPath: (movieDb.posterPath == '')
             ? 'no-poster'
+            : '${Environment.theMovieDbImageUrl}${movieDb.posterPath}',
+        releaseDate: movieDb.releaseDate,
+        title: movieDb.title,
+        video: movieDb.video,
+        voteAverage: movieDb.voteAverage,
+        voteCount: movieDb.voteCount);
+  }
+
+  static Movie movieDetailsToEntity(MovieDetails movieDb) {
+       return Movie(
+        adult: movieDb.adult,
+        backdropPath: (movieDb.backdropPath == '')
+            ? 'https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png'
+            : '${Environment.theMovieDbImageUrl}${movieDb.backdropPath}',
+        genreIds: movieDb.genres.map((e) => e.name).toList(),
+        id: movieDb.id,
+        originalLanguage: movieDb.originalLanguage,
+        originalTitle: movieDb.originalTitle,
+        overview: movieDb.overview,
+        popularity: movieDb.popularity,
+        posterPath: (movieDb.posterPath == '')
+            ? 'https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png'
             : '${Environment.theMovieDbImageUrl}${movieDb.posterPath}',
         releaseDate: movieDb.releaseDate,
         title: movieDb.title,
