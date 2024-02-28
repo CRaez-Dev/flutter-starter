@@ -20,3 +20,9 @@ Current progress:
   
 ![plot](./art/WidgetsApp.gif)
 
+
+- Cinemapedia
+	- Riverpod	
+	- Clean Architecture oriented
+ 
+ ![plot](./art/cinemapedia.gif)
